@@ -38,13 +38,15 @@ public partial class Player : CharacterBody2D
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
-		if(IsOnFloor()) jumps = maxJumps;
+		if(IsOnFloor()) {
+			jumps = maxJumps;
+			coyoteClock = coyoteTime;
+		}
 		if(coyoteClock > 0) coyoteClock -= delta;
 		var hSpeed = Input.GetAxis("left", "right") * speed;
 		var vSpeed = Velocity.Y + gravity;
 		if(Input.IsActionJustPressed("jump") && UpdateCanJump()){
 			vSpeed = -jumpPower;
-			coyoteClock = coyoteTime;
 		}
 		Velocity = new Vector2((float)hSpeed, (float)vSpeed);
 		MoveAndSlide();
