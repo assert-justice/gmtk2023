@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://vslkusolo5ai"]
+
+[ext_resource type="SpriteFrames" uid="uid://dm0fnmb255uw5" path="res://spriteframes/player_frames.tres" id="1_03tqy"]
+[ext_resource type="Script" path="res://scripts/Player.cs" id="1_rj0ue"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_copj7"]
+size = Vector2(20, 23)
+
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_rj0ue")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_03tqy")
+frame = 1
+frame_progress = 0.738478
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_copj7")

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn00ig3387x4h"]
+
+[ext_resource type="TileSet" uid="uid://dw8p33xoojnqw" path="res://tilesets/blocks.tres" id="1_6x016"]
+[ext_resource type="PackedScene" uid="uid://vslkusolo5ai" path="res://player.tscn" id="2_xk25b"]
+
+[node name="level0" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_6x016")
+format = 2
+layer_0/tile_data = PackedInt32Array(196610, 0, 0, 262147, 0, 0, 327684, 0, 0, 393221, 0, 0, 393222, 0, 0, 458758, 0, 0, 458759, 0, 0, 524296, 0, 0, 524297, 0, 0, 589833, 0, 0, 589834, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 589841, 0, 0, 589842, 0, 0, 589843, 0, 0, 589844, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 720923, 0, 0, 720924, 0, 0, 720925, 0, 0, 720926, 0, 0, 786463, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("2_xk25b")]
+position = Vector2(306, 75)
