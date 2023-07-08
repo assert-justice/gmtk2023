@@ -6,18 +6,16 @@ var data: Dictionary = {}
 func _ready():
 	var src := load("res://lines.json")
 	data = src.data
-	
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+#func _process(delta):
+	#pass
 
 func get_message(key, random, destructive):
 	if data.has(key):
 		var text = data[key]
-		if typeof(text) == TYPE_STRING:
+		if typeof(text) == TYPE_DICTIONARY:
 			return text
 		elif typeof(text) == TYPE_ARRAY:
 			var arr: Array = text
@@ -31,4 +29,4 @@ func get_message(key, random, destructive):
 				arr.remove_at(idx)
 				arr.push_back(res)
 			return res
-	return "None"
+	return null
