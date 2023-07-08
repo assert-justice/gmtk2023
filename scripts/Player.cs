@@ -15,11 +15,11 @@ public partial class Player : CharacterBody2D
 	[Export]
 	double coyoteTime = 0.3;
 	double coyoteClock = 0;
-	// Vector2 velocity;
-
+	AnimatedSprite2D sprite;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		sprite = GetChild<AnimatedSprite2D>(0);
 	}
 
 	bool UpdateCanJump(){
@@ -49,6 +49,10 @@ public partial class Player : CharacterBody2D
 			vSpeed = -jumpPower;
 		}
 		Velocity = new Vector2((float)hSpeed, (float)vSpeed);
+		if(Velocity.X < 0) sprite.FlipH = false;
+		if(Velocity.X > 0) sprite.FlipH = true;
+		if(Velocity.X == 0 || !IsOnFloor()) sprite.Stop();
+		else sprite.Play();
 		MoveAndSlide();
 	}
 }

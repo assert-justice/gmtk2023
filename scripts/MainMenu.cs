@@ -9,13 +9,19 @@ public partial class MainMenu : Node
 
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
 	public override void _Process(double delta)
 	{
 	}
 	private void _on_button_button_down()
 	{
 		// Replace with function body.
-		GD.Print("hi");
+		var lineSource = GetNode("Lines");
+		GD.Print(lineSource.Call("get_message", "text"));
+
+	}
+	public void SetMessage(string key){
+		var lineSource = GetNode("Lines");
+		var text = lineSource.Call("get_message", key, false).ToString();
+		if(text == "None") return;
 	}
 }

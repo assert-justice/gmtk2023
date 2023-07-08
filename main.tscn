@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxc5cbn4fqwog"]
+[gd_scene load_steps=4 format=3 uid="uid://cxc5cbn4fqwog"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_04ffn"]
 [ext_resource type="PackedScene" uid="uid://v57vavqkhkhf" path="res://game.tscn" id="2_knyne"]
+[ext_resource type="Script" path="res://scripts/Lines.gd" id="3_m15fs"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -14,18 +15,53 @@ script = ExtResource("1_04ffn")
 
 [node name="MainMenu" type="Control" parent="."]
 visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Button" type="Button" parent="MainMenu"]
-layout_mode = 0
-offset_left = 110.0
-offset_top = 83.0
-offset_right = 886.0
-offset_bottom = 333.0
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.5
+offset_right = 36.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Button" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
 text = "Click Me"
 
 [node name="game" parent="." instance=ExtResource("2_knyne")]
 
-[connection signal="button_down" from="MainMenu/Button" to="." method="_on_button_button_down"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 248.0
+offset_right = 413.0
+offset_bottom = 274.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "yo, you gonna make this thing?"
+autowrap_mode = 3
+
+[node name="Panel" type="Panel" parent="Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lines" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_m15fs")
+
+[connection signal="button_down" from="MainMenu/VBoxContainer/Button" to="." method="_on_button_button_down"]
