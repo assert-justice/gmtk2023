@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxc5cbn4fqwog"]
+[gd_scene load_steps=5 format=3 uid="uid://cxc5cbn4fqwog"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_04ffn"]
 [ext_resource type="PackedScene" uid="uid://v57vavqkhkhf" path="res://game.tscn" id="2_knyne"]
+[ext_resource type="Script" path="res://scripts/LinePlayer.cs" id="3_162og"]
 [ext_resource type="Script" path="res://scripts/Lines.gd" id="3_m15fs"]
 
 [node name="Main" type="Control"]
@@ -41,14 +42,21 @@ layout_mode = 2
 text = "Click Me"
 
 [node name="LinePlayer" type="Label" parent="."]
-layout_mode = 0
-offset_left = 86.0
-offset_top = 248.0
-offset_right = 413.0
-offset_bottom = 274.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -163.5
+offset_top = -26.0
+offset_right = 163.5
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "yo, you gonna make this thing?"
 autowrap_mode = 3
+script = ExtResource("3_162og")
 
 [node name="Panel" type="Panel" parent="LinePlayer"]
 show_behind_parent = true

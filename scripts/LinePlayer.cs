@@ -16,11 +16,11 @@ public partial class LinePlayer : Label
 	}
 
 	public void SetLine(Godot.Collections.Dictionary<string,string> dict, string key){
-		if(dict.ContainsKey("text")){
-			Text = dict["text"];
+		if(dict.ContainsKey("message")){
+			Text = dict["message"];
 		}
 		else{
-			GD.PrintErr($"The object at '${key}' does not have a text field. That's probably an error.");
+			GD.PrintErr($"The object at '${key}' does not have a message field. That's probably an error.");
 		}
 		if(dict.ContainsKey("filename")){
 			// load and play audio

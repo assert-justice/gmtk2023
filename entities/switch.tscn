@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://b61h3btwdq8mu"]
+
+[ext_resource type="Script" path="res://scripts/Switch.cs" id="1_fd2ls"]
+[ext_resource type="SpriteFrames" uid="uid://c5banmvbr03ke" path="res://spriteframes/switch_frames.tres" id="2_u3sde"]
+
+[node name="switch" type="Node2D"]
+script = ExtResource("1_fd2ls")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("2_u3sde")

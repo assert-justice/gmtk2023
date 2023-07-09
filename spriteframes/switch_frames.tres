@@ -1,0 +1,25 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://c5banmvbr03ke"]
+
+[ext_resource type="Texture2D" uid="uid://nt55eb5dpkdm" path="res://sprites/tiles_packed.png" id="1_2hwvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jbipt"]
+atlas = ExtResource("1_2hwvd")
+region = Rect2(72, 54, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h7xw"]
+atlas = ExtResource("1_2hwvd")
+region = Rect2(108, 54, 18, 18)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jbipt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h7xw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]

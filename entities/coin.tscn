@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0clkabytd77w"]
+
+[ext_resource type="Script" path="res://scripts/Coin.gd" id="1_yqprl"]
+[ext_resource type="SpriteFrames" uid="uid://b6u3hugwstc44" path="res://spriteframes/coin_frames.tres" id="2_kiclf"]
+
+[node name="coin" type="Node2D"]
+script = ExtResource("1_yqprl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -10
+sprite_frames = ExtResource("2_kiclf")

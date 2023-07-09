@@ -16,10 +16,12 @@ public partial class Player : CharacterBody2D
 	double coyoteTime = 0.3;
 	double coyoteClock = 0;
 	AnimatedSprite2D sprite;
+	PackedScene coinScene;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		sprite = GetChild<AnimatedSprite2D>(0);
+		coinScene = GD.Load<PackedScene>("res://entities/coin.tscn");
 	}
 
 	bool UpdateCanJump(){
@@ -53,6 +55,11 @@ public partial class Player : CharacterBody2D
 		if(Velocity.X > 0) sprite.FlipH = true;
 		if(Velocity.X == 0 || !IsOnFloor()) sprite.Stop();
 		else sprite.Play();
+		if(Input.IsActionJustPressed("coin")){
+			var coin = coinScene.Instantiate<Node2D>();
+			coin.Position = Position;
+			GetParent().AddChild(coin);
+		}
 		MoveAndSlide();
 	}
 }
