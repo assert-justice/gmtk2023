@@ -5,10 +5,11 @@ public partial class Game : Node
 {
 	[Export]
 	PackedScene[] scenes;
+	[Export]
 	int level = 0;
 	void LoadLevel(){
-		if(GetChildCount() > 0) GetChild(0).QueueFree();
 		if(level >= 0 && level < scenes.Length){
+			if(GetChildCount() > 0) GetChild(0).QueueFree();
 			var temp = scenes[level].Instantiate();
 			AddChild(temp);
 		}

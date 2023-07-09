@@ -42,6 +42,7 @@ public partial class MainMenu : Node
 	private void _on_timer_timeout()
 	{
 		// Replace with function body.
+		if(linePlayer.Visible) return;
 		SetMessage("control_basics");
 	}
 	public void Win(){
@@ -58,3 +59,5 @@ public partial class MainMenu : Node
 		PauseToggle();
 	}
 }
+
+

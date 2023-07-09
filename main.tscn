@@ -34,7 +34,7 @@ offset_right = 128.0
 offset_bottom = 61.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Untitled"
+text = "Going Through It"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -88,7 +88,7 @@ offset_right = 128.0
 offset_bottom = 61.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-text = "Paused
+text = "Fake Pause Menu
 "
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -123,6 +123,119 @@ text = "Resume"
 layout_mode = 2
 text = "Quit (still smart)"
 
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Credits"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 23.0
+offset_right = 128.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "A Winner is You!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Credits/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Credits"]
+visible = false
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = 87.0
+offset_right = 37.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label2" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Bad code and ennui: Riley"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Credits/VBoxContainer/Label2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label3" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Art: Kenny Pixel Platformer (kenney.nl)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Credits/VBoxContainer/Label3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label4" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "8-bit Platformer SFX commissioned by Mark McCorkle 
+for OpenGameArt.org ( http://opengameart.org )"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Credits/VBoxContainer/Label4"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label5" type="Label" parent="Credits/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Credits music: mrpoly 
+{opengameart.org/content/menu-music}"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="Credits/VBoxContainer/Label5"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="LinePlayer" type="Label" parent="."]
 visible = false
 layout_mode = 1
@@ -151,7 +264,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LinePlayer"]
-volume_db = -20.613
 
 [node name="Lines" type="Control" parent="."]
 anchors_preset = 0
@@ -160,7 +272,7 @@ offset_bottom = 40.0
 script = ExtResource("3_m15fs")
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 15.0
 one_shot = true
 autostart = true
 
@@ -168,4 +280,5 @@ autostart = true
 [connection signal="button_down" from="MainMenu/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
 [connection signal="button_down" from="PauseMenu/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
 [connection signal="button_down" from="PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="finished" from="LinePlayer/AudioStreamPlayer" to="LinePlayer" method="_on_audio_stream_player_finished"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

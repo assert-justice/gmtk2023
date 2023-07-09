@@ -1,54 +1,70 @@
 {
 	"intro": {
-		"message": "Hi! Yes, so this is awkward. I need you to help me make this game. And we're running out of time.",
-		"filename": "None"
+		"message": "Hi! Yes, so, this is awkward. I need you to help me make this game. And we're running out of time.",
+		"filename": "res://vo/intro.mp3"
 	},
 	"control_basics": {
-		"message": "If you haven't figured it out already 'A' and 'D' go left and right respectively. 'Space' jumps."
+		"message": "If you haven't figured it out already 'A' and 'D' go left and right respectively. 'Space' jumps.",
+		"filename": "res://vo/control_basics.mp3"
 	},
 	"flags":{
-		"message": "If you want to hear what I have to say touch a flag. If not, uh, close the game I guess?"
+		"message": "If you want to hear what I have to say then touch a flag. If not, uh, close the game I guess?",
+		"filename": "res://vo/flags.mp3"
 	},
 	"directions": {
-		"message": "It seems like you're getting along. I might have lured you here under false pretenses."
+		"message": "It seems like you're getting along. I might have lured you here under false pretenses.",
+		"filename": "res://vo/directions.mp3"
 	},
 	"coin_tutorial": {
-		"message": "Go ahead and sprinkle some coins around. You can drop them with 'L'."
+		"message": "Go ahead and sprinkle some coins around. You can drop them with 'L'.",
+		"filename": "res://vo/coin_tutorial.mp3"
 	},
 	"depression": {
-		"message": "You know, depression makes game jams real hard. It makes everything hard."
+		"message": "You know, depression makes game jams real hard. It makes everything hard.",
+		"filename": "res://vo/depression.mp3"
 	},
 	"holes":{
-		"message": "Sometimes you have to fall down to move forward."
+		"message": "Sometimes you have to fall down to move forward.",
+		"filename": "res://vo/holes.mp3"
 	},
 	"switch_tutorial": {
-		"message": "That over there is a switch. You can flick it with 'K'. It doesn't do anything though."
+		"message": "That over there is a switch. You can flick it with 'K'. It doesn't do anything though.",
+		"filename": "res://vo/switch_tutorial.mp3"
 	},
 	"throw_switch":{
-		"message": "Told you."
+		"message": "Told you.",
+		"filename": "res://vo/throw_switch.mp3"
 	},
 	"making_games":{
-		"message": "I like making games, it's a fun hobby. The industry is shit though don't go near."
+		"message": "I like making games, it's a fun hobby. The industry is shit though don't go near.",
+		"filename": "res://vo/making_games.mp3"
 	},
 	"art_value":{
-		"message": "You know, our time on this earth is limited. I have to wonder, is this the best use of my time? Is it yours?"
+		"message": "You know, our time on this earth is limited. I have to wonder, is this the best use of my time? Is it yours?",
+		"filename": "res://vo/art_value.mp3"
 	},
 	"winning":{
-		"message": "This jam is supposedly a competition. But there are so many of us even getting an honorable mention is a big ask."
+		"message": "This jam is supposedly a competition. But there are so many of us even getting an honorable mention is a big ask.",
+		"filename": "res://vo/winning.mp3"
 	},
 	"double_jump": {
-		"message": "You can double jump! That's a fun thing for games to have right?"
+		"message": "You can double jump! That's a fun thing for games to have right?",
+		"filename": "res://vo/double_jump.mp3"
 	},
 	"kenny": {
-		"message": "The art in this game is made by a guy named Kenny. There are links in the description. He' a life saver for art challenged shlubs like me."
+		"message": "The art in this game is made by a guy named Kenny. There are links in the description. He's a life saver for art challenged shlubs like me.",
+		"filename": "res://vo/kenny.mp3"
 	},
 	"existentialists":{
-		"message": "Isn't it funny that none of the existentialists liked being called that? Seems catty to me."
+		"message": "Isn't it funny that none of the existentialists liked being called that? I dunno, seems catty to me.",
+		"filename": "res://vo/existentialists.mp3"
 	},
 	"backward": {
-		"message": "You're moving backwards, but I feel like I'm treading water."
+		"message": "You're moving backwards, but I feel like I'm treading water.",
+		"filename": "res://vo/backward.mp3"
 	},
 	"done":{
-		"message": "You made it! Thanks for playing. I don't have much for you but I'll put on a song. Stay safe out there"
+		"message": "You made it! Thanks for playing. I don't have much for you but I'll put on a song. Stay safe out there.",
+		"filename": "res://vo/done.mp3"
 	}
 }

@@ -23,7 +23,7 @@ public partial class Player : CharacterBody2D
 	AudioStreamPlayer2D jumpAudio;
 	AudioStreamPlayer2D coinAudio;
 	public void AddTarget(Usable node){
-		main.SetMessage("switch_tutorial");
+		// main.SetMessage("switch_tutorial");
 		targets.Add(node);
 	}
 	public void RemoveTarget(Usable node){
@@ -90,6 +90,12 @@ public partial class Player : CharacterBody2D
 		if(Position.Y > 270){
 			var game = GetParent().GetParent<Game>();
 			game.IncLevel();
+		}
+		if(Position.X > 480){
+			Position = new Vector2(-24, Position.Y);
+		}
+		if(Position.X < -24){
+			Position = new Vector2(480, Position.Y);
 		}
 	}
 }
