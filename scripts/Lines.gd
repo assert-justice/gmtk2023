@@ -19,11 +19,13 @@ func get_message(key, random, destructive):
 			return text
 		elif typeof(text) == TYPE_ARRAY:
 			var arr: Array = text
+			if len(arr) == 0:
+				return null
 			var idx = 0
 			if random:
 				idx = randi_range(0, len(arr) - 1)
 			var res = arr[idx]
-			if destructive and len(arr) > 0:
+			if destructive:
 				arr.remove_at(idx)
 			if not random and not destructive:
 				arr.remove_at(idx)

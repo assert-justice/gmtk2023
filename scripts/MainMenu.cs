@@ -8,6 +8,7 @@ public partial class MainMenu : Node
 	public override void _Ready()
 	{
 		linePlayer = GetChild<LinePlayer>(2);
+		SetMessage("text", false, false);
 	}
 
 	public override void _Process(double delta)
@@ -15,11 +16,11 @@ public partial class MainMenu : Node
 	}
 	private void _on_button_button_down()
 	{
-		SetMessage("text");
+		// SetMessage("text");
 	}
-	public void SetMessage(string key){
+	public void SetMessage(string key, bool random, bool destructive){
 		var lineSource = GetNode("Lines");
-		var res = lineSource.Call("get_message", key, false, false).AsGodotDictionary<string, string>();
+		var res = lineSource.Call("get_message", key, random, destructive).AsGodotDictionary<string, string>();
 		linePlayer.SetLine(res, key);
 	}
 }

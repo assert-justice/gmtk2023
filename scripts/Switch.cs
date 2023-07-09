@@ -20,7 +20,7 @@ public partial class Switch : Usable
 	public override void _Ready()
 	{
 		sprite = GetChild<AnimatedSprite2D>(0);
-		sprite.Frame = state ? 1: 0;
+		SetState(state);
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
