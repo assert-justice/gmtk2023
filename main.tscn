@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://cxc5cbn4fqwog"]
+[gd_scene load_steps=4 format=3 uid="uid://cxc5cbn4fqwog"]
 
 [ext_resource type="Script" path="res://scripts/MainMenu.cs" id="1_04ffn"]
-[ext_resource type="PackedScene" uid="uid://v57vavqkhkhf" path="res://game.tscn" id="2_knyne"]
 [ext_resource type="Script" path="res://scripts/LinePlayer.cs" id="3_162og"]
 [ext_resource type="Script" path="res://scripts/Lines.gd" id="3_m15fs"]
 
@@ -16,10 +15,31 @@ script = ExtResource("1_04ffn")
 
 [node name="GameHolder" type="Node2D" parent="."]
 
-[node name="game" parent="GameHolder" instance=ExtResource("2_knyne")]
-
 [node name="MainMenu" type="Control" parent="."]
-visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="MainMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 23.0
+offset_right = 128.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Untitled"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="MainMenu/Label"]
+show_behind_parent = true
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,14 +53,75 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -36.5
-offset_right = 36.5
+offset_left = -36.0
+offset_top = 87.0
+offset_right = 37.0
+offset_bottom = -59.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Button" type="Button" parent="MainMenu/VBoxContainer"]
 layout_mode = 2
-text = "Click Me"
+text = "Play"
+
+[node name="Quit" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit (smart)"
+
+[node name="PauseMenu" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_top = 23.0
+offset_right = 128.0
+offset_bottom = 61.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Paused
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="PauseMenu/Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = 87.0
+offset_right = 37.0
+offset_bottom = -59.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Resume"
+
+[node name="Quit" type="Button" parent="PauseMenu/VBoxContainer"]
+layout_mode = 2
+text = "Quit (still smart)"
 
 [node name="LinePlayer" type="Label" parent="."]
 visible = false
@@ -70,6 +151,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="LinePlayer"]
+volume_db = -20.613
 
 [node name="Lines" type="Control" parent="."]
 anchors_preset = 0
@@ -77,4 +159,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("3_m15fs")
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
 [connection signal="button_down" from="MainMenu/VBoxContainer/Button" to="." method="_on_button_button_down"]
+[connection signal="button_down" from="MainMenu/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="button_down" from="PauseMenu/VBoxContainer/Resume" to="." method="_on_resume_button_down"]
+[connection signal="button_down" from="PauseMenu/VBoxContainer/Quit" to="." method="_on_quit_button_down"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -18,6 +18,9 @@
 	"depression": {
 		"message": "You know, depression makes game jams real hard. It makes everything hard."
 	},
+	"holes":{
+		"message": "Sometimes you have to fall down to move forward."
+	},
 	"switch_tutorial": {
 		"message": "That over there is a switch. You can flick it with 'K'. It doesn't do anything though."
 	},
@@ -34,7 +37,7 @@
 		"message": "This jam is supposedly a competition. But there are so many of us even getting an honorable mention is a big ask."
 	},
 	"double_jump": {
-		"message": "That's a double jump! That's a fun thing for games to have right?"
+		"message": "You can double jump! That's a fun thing for games to have right?"
 	},
 	"kenny": {
 		"message": "The art in this game is made by a guy named Kenny. There are links in the description. He' a life saver for art challenged shlubs like me."

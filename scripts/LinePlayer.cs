@@ -40,4 +40,8 @@ public partial class LinePlayer : Label
 			// load and play audio
 		}
 	}
+	public void Win(){
+		audio.Stream = GD.Load<AudioStream>("res://music/awesomeness.wav");
+		audio.Play();
+	}
 }

@@ -20,6 +20,8 @@ public partial class Player : CharacterBody2D
 	PackedScene coinScene;
 	HashSet<Usable> targets;
 	MainMenu main;
+	AudioStreamPlayer2D jumpAudio;
+	AudioStreamPlayer2D coinAudio;
 	public void AddTarget(Usable node){
 		main.SetMessage("switch_tutorial");
 		targets.Add(node);
@@ -34,6 +36,9 @@ public partial class Player : CharacterBody2D
 		coinScene = GD.Load<PackedScene>("res://entities/coin.tscn");
 		targets = new HashSet<Usable>();
 		main = GetTree().Root.GetNode("Main") as MainMenu;
+		jumpAudio = GetChild<AudioStreamPlayer2D>(2);
+		coinAudio = GetChild<AudioStreamPlayer2D>(3);
+		// main.Win();
 	}
 
 	bool UpdateCanJump(){
@@ -61,6 +66,7 @@ public partial class Player : CharacterBody2D
 		var vSpeed = Velocity.Y + gravity;
 		if(Input.IsActionJustPressed("jump") && UpdateCanJump()){
 			vSpeed = -jumpPower;
+			jumpAudio.Play();
 		}
 		Velocity = new Vector2((float)hSpeed, (float)vSpeed);
 		if(Velocity.X < 0) sprite.FlipH = false;
@@ -71,6 +77,7 @@ public partial class Player : CharacterBody2D
 			var coin = coinScene.Instantiate<Node2D>();
 			coin.Position = Position;
 			GetParent().AddChild(coin);
+			coinAudio.Play();
 		}
 		if(Input.IsActionJustPressed("use")){
 			if(targets.Count > 0) main.SetMessage("throw_switch");

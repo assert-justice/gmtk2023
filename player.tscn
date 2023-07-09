@@ -17,3 +17,7 @@ frame_progress = 0.738478
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_copj7")
+
+[node name="JumpAudio" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CoinAudio" type="AudioStreamPlayer2D" parent="."]
