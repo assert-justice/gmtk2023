@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public partial class Player : CharacterBody2D
 {
@@ -17,11 +18,19 @@ public partial class Player : CharacterBody2D
 	double coyoteClock = 0;
 	AnimatedSprite2D sprite;
 	PackedScene coinScene;
+	HashSet<Usable> targets;
+	public void AddTarget(Usable node){
+		targets.Add(node);
+	}
+	public void RemoveTarget(Usable node){
+		targets.Remove(node);
+	}
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		sprite = GetChild<AnimatedSprite2D>(0);
 		coinScene = GD.Load<PackedScene>("res://entities/coin.tscn");
+		targets = new HashSet<Usable>();
 	}
 
 	bool UpdateCanJump(){
@@ -59,6 +68,12 @@ public partial class Player : CharacterBody2D
 			var coin = coinScene.Instantiate<Node2D>();
 			coin.Position = Position;
 			GetParent().AddChild(coin);
+		}
+		if(Input.IsActionJustPressed("use")){
+			foreach (var item in targets)
+			{
+				item.Use();
+			}
 		}
 		MoveAndSlide();
 	}
