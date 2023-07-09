@@ -21,6 +21,7 @@ public partial class LinePlayer : Label
 	}
 
 	public void SetLine(Godot.Collections.Dictionary<string,string> dict, string key){
+		if(dict.Count == 0) return;
 		if(dict.ContainsKey("message")){
 			Text = dict["message"];
 		}
@@ -28,12 +29,15 @@ public partial class LinePlayer : Label
 			GD.PrintErr($"The object at '${key}' does not have a message field. That's probably an error.");
 		}
 		Visible = true;
-		showTime = 5;
+		var filename = "None";
 		if(dict.ContainsKey("filename")){
-			// load and play audio
+			filename = dict["filename"];
+		}
+		if(filename == "None"){
+			showTime = 10;
 		}
 		else{
-			showTime = 5;
+			// load and play audio
 		}
 	}
 }

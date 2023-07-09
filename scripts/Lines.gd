@@ -16,6 +16,8 @@ func get_message(key, random, destructive):
 	if data.has(key):
 		var text = data[key]
 		if typeof(text) == TYPE_DICTIONARY:
+			if(destructive):
+				data.erase(key)
 			return text
 		elif typeof(text) == TYPE_ARRAY:
 			var arr: Array = text

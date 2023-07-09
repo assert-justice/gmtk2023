@@ -1,6 +1,51 @@
 {
-	"text": {
-		"message": "yo",
+	"intro": {
+		"message": "Hi! Yes, so this is awkward. I need you to help me make this game.",
 		"filename": "None"
+	},
+	"control_basics": {
+		"message": "If you haven't figured it out already 'A' and 'D' go left and right respectively. 'Space' jumps."
+	},
+	"flags":{
+		"message": "If you want to hear what I have to say touch a flag. If not, close the game I guess?"
+	},
+	"directions": {
+		"message": "It seems like you're getting along. I might have lured you here under false pretenses."
+	},
+	"coin_tutorial": {
+		"message": "Go ahead and sprinkle some coins around. You can drop them with 'L'."
+	},
+	"depression": {
+		"message": "You know, depression makes game jams real hard. It makes everything hard."
+	},
+	"switch_tutorial": {
+		"message": "That over there is a switch. You can flick it with 'K'. It doesn't do anything though."
+	},
+	"throw_switch":{
+		"message": "Told you."
+	},
+	"making_games":{
+		"message": "I like making games, it's a fun hobby. The industry is shit though don't go near."
+	},
+	"art_value":{
+		"message": "You know, our time on this earth is limited. I have to wonder, is this the best use of my time? Is it yours?"
+	},
+	"winning":{
+		"message": "This jam is supposedly a competition. But there are so many of us even getting an honorable mention is a big ask."
+	},
+	"double_jump": {
+		"message": "That's a double jump! That's a fun thing for games to have right?"
+	},
+	"kenny": {
+		"message": "The art in this game is made by a guy named Kenny. There are links in the description. He' a life saver for art challenged shlubs like me."
+	},
+	"existentialists":{
+		"message": "Isn't it funny that none of the existentialists liked being called that? Seems catty to me."
+	},
+	"backward": {
+		"message": "You're moving backwards, but I feel like I'm treading water."
+	},
+	"done":{
+		"message": "You made it! Thanks for playing. I don't have much for you but I'll put on a song. Stay safe out there"
 	}
 }

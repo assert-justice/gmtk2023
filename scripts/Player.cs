@@ -19,7 +19,9 @@ public partial class Player : CharacterBody2D
 	AnimatedSprite2D sprite;
 	PackedScene coinScene;
 	HashSet<Usable> targets;
+	MainMenu main;
 	public void AddTarget(Usable node){
+		main.SetMessage("switch_tutorial");
 		targets.Add(node);
 	}
 	public void RemoveTarget(Usable node){
@@ -31,6 +33,7 @@ public partial class Player : CharacterBody2D
 		sprite = GetChild<AnimatedSprite2D>(0);
 		coinScene = GD.Load<PackedScene>("res://entities/coin.tscn");
 		targets = new HashSet<Usable>();
+		main = GetTree().Root.GetNode("Main") as MainMenu;
 	}
 
 	bool UpdateCanJump(){
@@ -70,6 +73,7 @@ public partial class Player : CharacterBody2D
 			GetParent().AddChild(coin);
 		}
 		if(Input.IsActionJustPressed("use")){
+			if(targets.Count > 0) main.SetMessage("throw_switch");
 			foreach (var item in targets)
 			{
 				item.Use();

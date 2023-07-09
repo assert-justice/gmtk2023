@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://4svf8muqkxdn"]
+
+[ext_resource type="Script" path="res://scripts/Flag.cs" id="1_blhss"]
+[ext_resource type="Texture2D" uid="uid://nt55eb5dpkdm" path="res://sprites/tiles_packed.png" id="2_vgghi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8433"]
+atlas = ExtResource("2_vgghi")
+region = Rect2(198, 90, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acmds"]
+atlas = ExtResource("2_vgghi")
+region = Rect2(216, 90, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1m83c"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8433")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acmds")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i28rk"]
+
+[node name="flag" type="Node2D"]
+script = ExtResource("1_blhss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_1m83c")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_i28rk")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
