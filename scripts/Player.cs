@@ -80,5 +80,9 @@ public partial class Player : CharacterBody2D
 			}
 		}
 		MoveAndSlide();
+		if(Position.Y > 270){
+			var game = GetParent().GetParent<Game>();
+			game.IncLevel();
+		}
 	}
 }
