@@ -1,13 +1,13 @@
 {
 	"intro": {
-		"message": "Hi! Yes, so this is awkward. I need you to help me make this game.",
+		"message": "Hi! Yes, so this is awkward. I need you to help me make this game. And we're running out of time.",
 		"filename": "None"
 	},
 	"control_basics": {
 		"message": "If you haven't figured it out already 'A' and 'D' go left and right respectively. 'Space' jumps."
 	},
 	"flags":{
-		"message": "If you want to hear what I have to say touch a flag. If not, close the game I guess?"
+		"message": "If you want to hear what I have to say touch a flag. If not, uh, close the game I guess?"
 	},
 	"directions": {
 		"message": "It seems like you're getting along. I might have lured you here under false pretenses."
